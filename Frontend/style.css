@@ -1,0 +1,88 @@
+/* Página */
+:root{
+	--bg:#0f1724; /* fundo escuro */
+	--card:#ffffff;
+	--input-bg:#e9e9ea;
+	--primary:#4a73ff;
+	--text:#0b1320;
+	--muted:#5b6170;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	background:var(--bg);
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:40px 20px;
+}
+
+.page-bg{width:100%;max-width:820px}
+
+/* Card central */
+.card{
+	background:var(--card);
+	width:100%;
+	max-width:460px;
+	margin:32px auto;
+	padding:34px 36px;
+	border-radius:12px;
+	box-shadow:0 8px 30px rgba(3,7,18,0.45);
+}
+
+.title{
+	text-align:center;
+	font-size:28px;
+	margin:0 0 22px 0;
+	color:var(--text);
+	font-weight:700;
+}
+
+.login-form{display:block}
+.field{margin-bottom:16px}
+.field label{
+	display:block;
+	font-size:13px;
+	color:var(--muted);
+	margin-bottom:8px;
+}
+
+.login-form input{
+	width:100%;
+	background:var(--input-bg);
+	border:0;
+	padding:12px 16px;
+	border-radius:8px;
+	font-size:15px;
+	color:var(--text);
+	outline: none;
+}
+.login-form input::placeholder{color:#9b9b9b}
+
+.btn-primary{
+	display:block;
+	width:100%;
+	background:var(--primary);
+	color:white;
+	border:0;
+	padding:12px 18px;
+	border-radius:8px;
+	font-size:16px;
+	cursor:pointer;
+	margin-top:6px;
+}
+.btn-primary:active{transform:translateY(1px)}
+
+@media (max-width:520px){
+	.card{padding:24px}
+	.title{font-size:22px}
+}
+
+#cadastro {
+    text-align: center;
+}
