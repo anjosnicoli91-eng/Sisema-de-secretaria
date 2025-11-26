@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Cadastro de Funcionário</title>
+	<link rel="stylesheet" href="../../style.css">
+	<link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+	<div class="cadastro-page">
+		<main class="form-card">
+			<div class="brand">
+				<h1 class="brand-title">VivaClass</h1>
+			</div>
+
+			<h2 class="form-title">Cadastro de Funcionário</h2>
+
+			<form id="cadastroForm" class="cadastro-form" autocomplete="on">
+				<label>Nome *
+					<input type="text" name="nome" placeholder="Nome completo" required />
+				</label>
+
+				<label>CPF *
+					<input type="text" name="cpf" placeholder="123.456.789-00" required />
+				</label>
+
+				<label>Email *
+					<input type="email" name="email" placeholder="funcionario@email.com" required />
+				</label>
+
+				<label>Telefone
+					<input type="tel" name="telefone" placeholder="(11) 99999-9999" />
+				</label>
+
+				<label>Cargo *
+					<input type="text" name="cargo" placeholder="Ex: Professor, Diretor, etc" required />
+				</label>
+
+				<label>Data de Admissão
+					<input type="date" name="admissao" />
+				</label>
+
+				<label>Salário
+					<input type="number" name="salario" step="0.01" placeholder="0.00" />
+				</label>
+
+				<div class="form-actions">
+					<button type="submit" class="btn-primary">Cadastrar</button>
+					<button type="button" class="btn-secondary" id="btnBack">Voltar</button>
+				</div>
+			</form>
+		</main>
+	</div>
+
+	<script>
+		document.getElementById('cadastroForm')?.addEventListener('submit', function(e){
+			e.preventDefault();
+			const form = new FormData(this);
+			const data = Object.fromEntries(form.entries());
+			console.log('Cadastro (simulado):', data);
+			alert('Cadastro simulado para: ' + (data.nome || '---'));
+		});
+		document.getElementById('btnBack')?.addEventListener('click', ()=>history.back());
+	</script>
+</body>
+</html>
+
