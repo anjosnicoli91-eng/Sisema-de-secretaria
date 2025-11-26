@@ -1,10 +1,10 @@
 /* Página */
 :root{
-	--bg:#0f1724; /* fundo escuro */
+	--bg:#3262ad; /* fundo escuro */
 	--card:#ffffff;
 	--input-bg:#e9e9ea;
 	--primary:#4a73ff;
-	--text:#0b1320;
+	--text:#000000;
 	--muted:#5b6170;
 }
 
