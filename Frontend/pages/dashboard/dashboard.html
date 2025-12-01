@@ -4,10 +4,40 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Dashboard Administrativo</title>
-	<link rel="stylesheet" href="../../style.css">
 	<link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
+	<!-- Sidebar de navegação (estética) -->
+	<aside class="sidebar" id="mainSidebar" aria-label="Menu principal">
+		<button class="sidebar-close" id="sidebarClose" aria-label="Fechar menu">✕</button>
+		<nav class="sidebar-nav">
+			<ul>
+		<!-- 'Meu Perfil' removido conforme solicitado -->
+				<li class="menu-item"><span class="icon"></span><a href="#">Guia de Status</a></li>
+				<li class="menu-item has-children" id="menuSecretaria">
+					<button class="menu-toggle" aria-expanded="false">
+						<span class="icon"></span>
+						<span class="menu-label">Secretaria</span>
+						<span class="chev">›</span>
+					</button>
+					<ul class="submenu" aria-hidden="true">
+						<li><a href="../cadastro/cadastro.html">Cadastro</a></li>
+					</ul>
+				</li>
+				<li class="menu-item"><span class="icon"></span><a href="../aluno/aluno.html">Alunos</a></li>
+				<li class="menu-item"><span class="icon"></span><a href="../turmas/turmas.html">Turmas</a></li>
+				<li class="menu-item"><span class="icon"></span><a href="../matriculas/matriculas.html">Matrículas</a></li>
+					<li><a href="#">Configurações</a></li>
+			</ul>
+		</nav>
+
+		<!-- Sidebar footer (logout) -->
+		<div class="sidebar-footer">
+			<a href="../../index.html" id="logoutLink" class="logout-link">Sair</a>
+		</div>
+	</aside>
+
+	<button id="openSidebar" class="sidebar-open" aria-label="Abrir menu">☰</button>
 	<div class="dashboard-page">
 		<header class="dashboard-header">
 			<h1>Dashboard Administrativo</h1>

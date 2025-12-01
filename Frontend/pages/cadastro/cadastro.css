@@ -1,53 +1,54 @@
-/* Estilos para a página de cadastro de funcionário */
-.cadastro-page{display:flex;justify-content:center;padding:40px 20px}
-.form-card{width:380px;
-    background:#fff;
-    border-radius:10px;
-    padding:22px 20px;
-    box-shadow:0 12px 30px rgba(3,7,18,0.45)}
+/* Estilo inspirado no mockup: fundo azul com cartão centralizado */
+:root{
+    --cad-bg:#3f5fb7;
+    --card-bg:#ffffff;
+    --input-bg:#efefef;
+    --primary-1:#667bff;
+    --primary-2:#5362ff;
+    --muted:#6b6f84;
+}
 
-.brand{display:flex;
-    justify-content:center;
-    margin-bottom:6px}
+.cadastro-bg{background-image: linear-gradient(rgba(63,95,183,0.92), rgba(63,95,183,0.92)), url('../../assets/bg.png');background-size:cover;background-position:center center;background-repeat:no-repeat}
+body{display:flex;align-items:center;justify-content:center;padding:60px 20px;font-family: Georgia, 'Times New Roman', serif}
 
-.brand-title{font-size:26px;
-    margin:0;text-align:center;
-    font-weight:800}
+/* apply background when using the light-page variant */
+body.light-page{background: var(--cad-bg)}
+.cadastro-page{display:flex;justify-content:center;align-items:center;width:100%}
+.form-card{width:460px;background:var(--card-bg);border-radius:12px;padding:34px 32px;box-shadow:0 18px 40px rgba(3,7,18,0.25)}
 
-.form-title{font-size:18px;
-    margin:12px 0 14px 0}
+.brand{display:flex;justify-content:center;margin-bottom:6px}
+.brand-title{font-size:28px;margin:0;text-align:center;font-weight:800;font-family: Georgia, 'Times New Roman', serif}
 
-.cadastro-form label{display:block;
-    font-size:13px;
-    color:#333;
-    margin-bottom:10px}
+.form-title{font-size:16px;margin:12px 0 14px 0;color:var(--muted)}
 
-.cadastro-form input{display:block;width:100%;
-    padding:12px;
-    border-radius:8px;
-    border:0;
-    background:#eee;
-    color:#222;
-    font-size:14px}
+.cadastro-form label{display:block;font-size:13px;color:#334155;margin-bottom:8px}
 
+.cadastro-form input{display:block;width:100%;padding:12px;border-radius:10px;border:0;background:var(--input-bg);color:#222;font-size:14px;margin-bottom:12px}
 .cadastro-form input[type=date]{padding:10px 12px}
 
-.form-actions{display:flex;gap:12px;
-    margin-top:16px}
-
-.btn-primary{flex:1;
-    background:#4a73ff;
-    color:#fff;
-    padding:10px;border-radius:8px;
-    border:0;cursor:pointer}
-.btn-secondary{flex:1;background:#f1f3f5;
-    color:#111;padding:10px;
-    border-radius:8px;border:0;
-    cursor:pointer}
-
-@media (max-width:480px){
-	.form-card{width:100%;
-        padding:18px}
-	.brand-title{font-size:22px}
+/* make numeric/text inputs (matrícula, cpf, numbers) use Arial for numeric readability */
+.cadastro-form input[type=number],
+.cadastro-form input[name="matricula"],
+.cadastro-form input[name="cpf"]{
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+.form-actions{display:flex;gap:12px;margin-top:16px}
+
+.btn-primary{flex:1;background:linear-gradient(180deg,var(--primary-1),var(--primary-2));color:#fff;padding:12px;border-radius:10px;border:0;cursor:pointer;font-size:16px}
+.btn-primary:active{transform:translateY(1px)}
+.btn-secondary{flex:1;background:#f1f3f5;color:#111;padding:10px;border-radius:8px;border:0;cursor:pointer}
+
+.help-text{margin-top:14px;text-align:center;color:#5b5f73;font-size:14px}
+.help-text a{color:#6c5cff;text-decoration:underline}
+
+@media (max-width:520px){
+    .form-card{width:100%;padding:22px}
+    .brand-title{font-size:22px}
+}
+
+/* When inside the app light-page variant, keep card centered but respect layout */
+body.light-page .form-card{margin:0 auto}
+
+
 

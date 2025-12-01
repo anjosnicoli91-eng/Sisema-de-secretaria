@@ -1,48 +1,17 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Cadastro de Alunos — Aluno</title>
-	<link rel="stylesheet" href="../../style.css">
-	<link rel="stylesheet" href="aluno.css">
-</head>
-<body>
-	<div class="container-page">
-		<header class="page-header">
-			<h1>Cadastro de Alunos</h1>
-			<button id="btnNew" class="btn-primary small">+ Novo Aluno</button>
-		</header>
+<label>Situação
+                    <select name="situacao">
+                        <option value="Ativo">Ativo</option>
+                        <option value="Inativo">Inativo</option>
+                    </select>
+                </label>
 
-		<main class="card-list">
-			<div class="table-card">
-				<table class="students-table" cellspacing="0">
-					<thead>
-						<tr>
-							<th>Nome</th>
-							<th>CPF</th>
-							<th>Email</th>
-							<th>Situação</th>
-							<th>Ações</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="td-name">nicoli</td>
-							<td>21742951724</td>
-							<td>anjosnicoli91@gmail.com</td>
-							<td><span class="badge green">Ativo</span></td>
-							<td><a href="#" class="link">Editar</a></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</main>
-	</div>
+                <input type="hidden" id="studentId" name="id" />
+=======
+                <label>Situação
+                    <select name="situacao">
+                        <option value="Ativo">Ativo</option>
+                        <option value="Inativo">Inativo</option>
+                    </select>
+                </label>
 
-	<script>
-		document.getElementById('btnNew')?.addEventListener('click', e=>{e.preventDefault(); alert('Abrir formulário de novo aluno (a implementar)')});
-	</script>
-</body>
-</html>
-
+                <input type="hidden" id="studentId" name="id" />

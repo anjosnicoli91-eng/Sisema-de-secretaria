@@ -1,4 +1,5 @@
 /* Página */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@600;800&display=swap');
 :root{
 	--bg:#3262ad; /* fundo escuro */
 	--card:#ffffff;
@@ -12,14 +13,14 @@
 html,body{height:100%}
 body{
 	margin:0;
-	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-	background:var(--bg);
+	font-family: 'Inter', 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 	display:flex;
 	align-items:center;
 	justify-content:center;
 	padding:40px 20px;
+	background: var(--bg);
 }
 
 .page-bg{width:100%;max-width:820px}

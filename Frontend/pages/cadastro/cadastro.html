@@ -4,14 +4,13 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Cadastro de Funcionário</title>
-	<link rel="stylesheet" href="../../style.css">
 	<link rel="stylesheet" href="cadastro.css">
 </head>
-<body>
+<body class="light-page">
 	<div class="cadastro-page">
 		<main class="form-card">
 			<div class="brand">
-				<h1 class="brand-title">VivaClass</h1>
+				<h1 class="brand-title">Colégio Americano</h1>
 			</div>
 
 			<h2 class="form-title">Cadastro de Funcionário</h2>
@@ -33,16 +32,20 @@
 					<input type="tel" name="telefone" placeholder="(11) 99999-9999" />
 				</label>
 
-				<label>Cargo *
-					<input type="text" name="cargo" placeholder="Ex: Professor, Diretor, etc" required />
+				<label>Matrícula do Funcionário *
+					<input type="text" name="matricula" placeholder="Número da matrícula" required />
 				</label>
 
 				<label>Data de Admissão
 					<input type="date" name="admissao" />
 				</label>
 
-				<label>Salário
-					<input type="number" name="salario" step="0.01" placeholder="0.00" />
+				<label>Senha *
+					<input type="password" name="senha" placeholder="Crie uma senha" required />
+				</label>
+
+				<label>Confirmar Senha *
+					<input type="password" name="confirma_senha" placeholder="Repita a senha" required />
 				</label>
 
 				<div class="form-actions">
@@ -58,6 +61,13 @@
 			e.preventDefault();
 			const form = new FormData(this);
 			const data = Object.fromEntries(form.entries());
+			// validar confirmação de senha
+			if(data.senha !== data.confirma_senha){
+				alert('As senhas não coincidem. Por favor, verifique.');
+				return;
+			}
+			// remover confirmação antes de processar
+			delete data.confirma_senha;
 			console.log('Cadastro (simulado):', data);
 			alert('Cadastro simulado para: ' + (data.nome || '---'));
 		});

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro de Turmas</title>
+    <link rel="stylesheet" href="turmas.css">
+</head>
+<body class="light-page">
+    <div class="container-page">
+        <h1 class="page-title-center">Cadastro de Turmas</h1> 
+        
+        <header class="page-header-actions"> 
+            <button id="btnNewClass" class="btn-primary small">+ Nova Turma</button>
+        </header>
+
+        <main class="card-list">
+            <div class="table-card">
+                <table class="classes-table" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Identificação</th>
+                            <th>Curso</th>
+                            <th>Turno</th>
+                            <th>Ano</th>
+                            <th>Vagas Máx.</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="6" class="empty">Nenhuma turma cadastrada</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <div id="newClassModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Nova Turma</h2>
+                <form id="newClassForm">
+                    <label for="identificacao">Identificação *</label>
+                    <input type="text" id="identificacao" name="identificacao" required />
+
+                    <label for="curso">Curso *</label>
+                    <input type="text" id="curso" name="curso" required />
+
+                    <label for="turno">Turno *</label>
+                    <select id="turno" name="turno" required>
+                        <option value="">Selecione</option>
+                        <option value="Manhã">Manhã</option>
+                        <option value="Tarde">Tarde</option>
+                        <option value="Noite">Noite</option>
+                    </select>
+
+                    <label for="ano">Ano *</label>
+                    <input type="number" id="ano" name="ano" required />
+
+                    <label for="vagasMax">Vagas Máx. *</label>
+                    <input type="number" id="vagasMax" name="vagasMax" required />
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Cadastrar</button>
+                        <button type="button" class="btn-secondary" id="btnCancel">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+    <script src="turmas.js"></script>
+</body>
+</html>
